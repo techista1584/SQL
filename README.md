@@ -62,20 +62,20 @@ WHERE disputed = 0 AND dispute_lost = 1;
 <img width="1015" height="296" alt="image" src="https://github.com/user-attachments/assets/a292f495-8428-41c6-b1ca-928116436010" />
 <br><br>
 
---Replace 0/1 value of disputed to words
-SELECT country,customer_id,invoice_number,invoice_date,due_date,invoice_amount_usd,
-CASE
-	WHEN disputed = 1 THEN 'yes'
+--Replace 0/1 value of disputed to words  
+SELECT country,customer_id,invoice_number,invoice_date,due_date,invoice_amount_usd,  
+CASE    
+	WHEN disputed = 1 THEN 'yes'  
 	ELSE 'no'
-END AS disputed2,
-CASE
-	WHEN dispute_lost = 1 THEN 'lost'
-	WHEN disputed = 1 AND dispute_lost = 0 THEN 'win'
-	WHEN disputed = 0 AND dispute_lost = 0 THEN 'no dispute'
-	ELSE NULL
-	END AS dispute_lost2,
-settled_date,days_to_settle,days_late
-FROM yellevate_invoices;
+END AS disputed2,  
+CASE  
+	WHEN dispute_lost = 1 THEN 'lost'  
+	WHEN disputed = 1 AND dispute_lost = 0 THEN 'win'  
+	WHEN disputed = 0 AND dispute_lost = 0 THEN 'no dispute'  
+	ELSE NULL  
+	END AS dispute_lost2,  
+settled_date,days_to_settle,days_late  
+FROM yellevate_invoices;  
 <img width="1015" height="765" alt="image" src="https://github.com/user-attachments/assets/03ae2cca-e657-417c-9ac9-012de603bbf1" />
 <br><br>
 
