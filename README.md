@@ -47,18 +47,18 @@ Identify the causes of client disputes and come up with actionable strategies to
 Methodology
 
 A.	Creation of Table “Yellevate_invoices”
-1.	'Create table Yellevate_invoices'
-CREATE TABLE IF NOT EXISTS Yellevate_invoices
-(country VARCHAR,customer_ID VARCHAR,invoice_number NUMERIC,invoice_date DATE,due_date DATE,invoice_amount_usd NUMERIC, disputed NUMERIC,dispute_lost NUMERIC,settled_date DATE,days_to_settle INTEGER,days_late INTEGER);
+1.	'Create table Yellevate_invoices'  
+CREATE TABLE IF NOT EXISTS Yellevate_invoices    
+(country VARCHAR,customer_ID VARCHAR,invoice_number NUMERIC,invoice_date DATE,due_date DATE,invoice_amount_usd NUMERIC, disputed NUMERIC,dispute_lost NUMERIC,settled_date DATE,days_to_settle INTEGER,days_late INTEGER);  
 SELECT * FROM yellevate_invoices;
 <img width="951" height="547" alt="image" src="https://github.com/user-attachments/assets/99b1cc37-550c-4532-a1a7-96e426c97f10" />
 <br><br>
 
 B.	Data Cleansing
 
---Check if when dispute_lost column has value of 1, then value of disputed column should also be 1
-SELECT * FROM yellevate_invoices
-WHERE disputed = 0 AND dispute_lost = 1;
+--Check if when dispute_lost column has value of 1, then value of disputed column should also be 1  
+SELECT * FROM yellevate_invoices  
+WHERE disputed = 0 AND dispute_lost = 1;  
 <img width="1015" height="296" alt="image" src="https://github.com/user-attachments/assets/a292f495-8428-41c6-b1ca-928116436010" />
 <br><br>
 
